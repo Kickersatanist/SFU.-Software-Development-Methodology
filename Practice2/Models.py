@@ -44,7 +44,7 @@ class Award:
 
 class Habit:
     def __init__(self, id: int, name: str, difficulty: Difficulty, penalty: str, user: User, award: Award,
-                 enddate: datetime, periodicity: datetime.day, startdate: datetime = datetime.now().date()):
+                 enddate: datetime, startdate: datetime = datetime.now().date(), periodicityDay: datetime.day = None, peridocityHour: int = None):
         self.id = id
         self.name = name
         self.difficulty = difficulty
@@ -52,12 +52,19 @@ class Habit:
         self.award = award
         self.startdate = startdate
         self.enddate = enddate
-        self.periodicity = periodicity
+        self.periodicityDay = periodicityDay
+        self.periodicityHour = peridocityHour
         self.user = user
 
     def __str__(self):
-        return (f'\nПривычка: {self.id} - {self.name} - {self.difficulty.value[1]} - {self.penalty} - {self.award} - {self.startdate},'
-                f'{self.enddate} - {self.periodicity} дней - {self.user}')
+        if self.periodicityDay is not None:
+            return (f'\nПривычка: {self.id} - {self.name} - {self.difficulty.value[1]} - {self.penalty} - {self.award} - {self.startdate},'
+                    f'{self.enddate} - раз в {self.periodicityDay} дней - {self.user}')
+        elif self.periodicityHour is not None:
+            return (
+                f'\nПривычка: {self.id} - {self.name} - {self.difficulty.value[1]} - {self.penalty} - {self.award} - {self.startdate},'
+                f'{self.enddate} - раз в {self.periodicityHour} ч. - {self.user}')
+
 
     def __repr__(self):
         return self.__str__()
