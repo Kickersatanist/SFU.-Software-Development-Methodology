@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from modelsOLD.award import Award
-from modelsOLD.difficulty import Difficulty
-from modelsOLD.penalty import Penalty
-from modelsOLD.user import User
+from models.award import Award
+from models.difficulty import Difficulty
+from models.penalty import Penalty
+from models.user import User
 
 
 class Habit:

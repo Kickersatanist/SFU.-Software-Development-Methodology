@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from modelsOLD.award_type import AwardType
+from models.award_type import AwardType
 
 
 @dataclass(frozen=True)

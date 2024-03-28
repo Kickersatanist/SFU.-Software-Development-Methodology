@@ -7,6 +7,12 @@ from models.difficulty import Difficulty
 from models.habit import Habit
 from models.penalty import Penalty
 from models.user import User
+# from Practice3.models.award import Award
+# from Practice3.models.award_type import AwardType
+# from Practice3.models.difficulty import Difficulty
+# from Practice3.models.habit import Habit
+# from Practice3.models.penalty import Penalty
+# from Practice3.models.user import User
 from services import user_service
 
 
